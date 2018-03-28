@@ -116,7 +116,7 @@ export default {
   height: 60px;
   z-index: 1024;
   line-height: 60px;
-  background-color: #000000;
+  background-color: #272727;
   border-radius: 0px !important;
   /*.hamburger-container {*/
     /*line-height: 60px;*/
@@ -175,11 +175,15 @@ export default {
 }
 
 .main-menu {
-  height: 60px;
-  line-height: 60px;
+  height: 59px;
+  line-height: 59px;
   background-color: #272727;
   float: left;
   z-index: 9999;
+  border: none;
+  outline: none;
+  margin-top: 0px;
+  padding-top: 0px;
 }
 
 .main-logo-content {
@@ -201,11 +205,15 @@ export default {
 .main-menu-content {
   float: left;
   margin-left: 30px;
-  /*width: 600px;*/
+  background-color: inherit;
+  line-height: 59px;
+  height: 59px;
+  border: none;
 }
 .main-menu-content ul {
-  line-height: 60px;
-  height: 60px;
+  border: none;
+  line-height: 59px;
+  height: 59px;
   padding: 0px;
   margin: 0px;
 }
@@ -216,8 +224,9 @@ export default {
   font-weight: 600;
   margin: 0px 15px;
   padding: 0px;
-  height: 60px;
-  line-height: 60px;
+  height: 58px;
+  line-height: 58px;
   list-style: none;
+  border: none;
 }
 </style>
