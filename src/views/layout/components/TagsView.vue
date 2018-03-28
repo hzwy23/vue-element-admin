@@ -1,6 +1,10 @@
 <template>
   <div class="tags-view-container">
     <scroll-pane class='tags-view-wrapper' ref='scrollPane'>
+      <!--将菜单伸缩栏目移动到tab栏目，方便使用和查看-->
+      <!--<div style="float: left; width: 100px;">-->
+        <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
+      <!--</div>-->
       <router-link ref='tag' class="tags-view-item" :class="isActive(tag)?'active':''" v-for="tag in Array.from(visitedViews)"
         :to="tag.path" :key="tag.path" @contextmenu.prevent.native="openMenu(tag,$event)">
         {{generateTitle(tag.title)}}
@@ -18,9 +22,14 @@
 <script>
 import ScrollPane from '@/components/ScrollPane'
 import { generateTitle } from '@/utils/i18n'
+import Hamburger from '@/components/Hamburger'
+import { mapGetters } from 'vuex'
 
 export default {
-  components: { ScrollPane },
+  components: {
+    ScrollPane,
+    Hamburger
+  },
   data() {
     return {
       visible: false,
@@ -51,6 +60,11 @@ export default {
     this.addViewTags()
   },
   methods: {
+    ...mapGetters([
+      'sidebar',
+      'name',
+      'avatar'
+    ]),
     generateTitle, // generateTitle by vue-i18n
     generateRoute() {
       if (this.$route.name) {
@@ -109,12 +123,22 @@ export default {
     },
     closeMenu() {
       this.visible = false
+    },
+    toggleSideBar() {
+      this.$store.dispatch('toggleSideBar')
     }
   }
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
+.hamburger-container {
+    line-height: 34px;
+    height: 34px;
+    float: left;
+    padding: 4px 4px;
+}
+
 .tags-view-container {
   .tags-view-wrapper {
     background: #fff;

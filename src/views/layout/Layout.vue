@@ -1,8 +1,8 @@
 <template>
 	<div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
-		<sidebar class="sidebar-container"></sidebar>
+    <main-menu></main-menu>
+    <sidebar class="sidebar-container"></sidebar>
 		<div class="main-container">
-			<navbar></navbar>
 			<tags-view></tags-view>
 			<app-main></app-main>
 		</div>
@@ -11,6 +11,7 @@
 
 <script>
 import { Navbar, Sidebar, AppMain, TagsView } from './components'
+import MainMenu from './components/MainMenu'
 
 export default {
   name: 'layout',
@@ -18,7 +19,8 @@ export default {
     Navbar,
     Sidebar,
     AppMain,
-    TagsView
+    TagsView,
+    MainMenu
   },
   computed: {
     sidebar() {
@@ -33,6 +35,8 @@ export default {
 	.app-wrapper {
 	  @include clearfix;
 	  position: relative;
+    // TODO 修改主容器中的滑动按钮，设置为hidden，禁用主容器中的滑动
+    overflow: hidden;
 	  height: 100%;
 	  width: 100%;
 	}
