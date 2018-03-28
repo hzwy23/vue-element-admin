@@ -1,5 +1,30 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
+
+    <div class="main-menu">
+      <div class="main-logo">
+        <span>智干电商ERP系统</span>
+      </div>
+
+      <!--主菜单展示区域-->
+      <div class="main-menu-content">
+        <!--TODO 替换成从数据库读取用户被授权的菜单信息-->
+        <ul>
+          <li>人事管理</li>
+          <li>权限管理</li>
+          <li>商品管理</li>
+          <li>供应商管理</li>
+          <li>仓库管理</li>
+          <li>财股管理</li>
+          <li>报表系统</li>
+        </ul>
+      </div>
+      <!--用户信息展示区域-->
+      <!--<div class="main-user-info">-->
+        <!--<navbar></navbar>-->
+      <!--</div>-->
+    </div>
+
     <!--<hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>-->
 
     <!--<breadcrumb class="breadcrumb-container"></breadcrumb>-->
@@ -89,8 +114,9 @@ export default {
   // TODO 修改布局，设置高度和主菜单栏目高度一致，60px;
   // 之前的高度是 50px;
   height: 60px;
+  z-index: 1024;
   line-height: 60px;
-  background-color: inherit;
+  background-color: #000000;
   border-radius: 0px !important;
   /*.hamburger-container {*/
     /*line-height: 60px;*/
@@ -146,5 +172,45 @@ export default {
       }
     }
   }
+}
+
+.main-menu {
+  height: 60px;
+  line-height: 60px;
+  background-color: #272727;
+  float: left;
+  z-index: 9999;
+}
+.main-logo{
+  height: 60px;
+  line-height: 60px;
+  width: 240px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding-left: 15px;
+  float: left;
+}
+.main-menu-content {
+  float: left;
+  margin-left: 60px;
+  /*width: 600px;*/
+}
+.main-menu-content ul {
+  line-height: 60px;
+  height: 60px;
+  padding: 0px;
+  margin: 0px;
+}
+.main-menu-content li {
+  float: left;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 15px;
+  padding: 0px;
+  height: 60px;
+  line-height: 60px;
+  list-style: none;
 }
 </style>

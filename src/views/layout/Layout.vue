@@ -1,6 +1,6 @@
 <template>
 	<div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
-    <main-menu></main-menu>
+    <navbar></navbar>
     <sidebar class="sidebar-container"></sidebar>
 		<div class="main-container">
 			<tags-view></tags-view>
@@ -11,7 +11,7 @@
 
 <script>
 import { Navbar, Sidebar, AppMain, TagsView } from './components'
-import MainMenu from './components/MainMenu'
+// import MainMenu from './components/MainMenu'
 
 export default {
   name: 'layout',
@@ -20,7 +20,7 @@ export default {
     Sidebar,
     AppMain,
     TagsView,
-    MainMenu
+    // MainMenu
   },
   computed: {
     sidebar() {

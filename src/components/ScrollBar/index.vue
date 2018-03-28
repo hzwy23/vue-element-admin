@@ -13,8 +13,7 @@ export default {
   name: 'scrollBar',
   data() {
     return {
-      top: 0,
-      marginTop: 60
+      top: 0
     }
   },
   methods: {
@@ -48,8 +47,6 @@ export default {
 .scroll-container {
   position: relative;
   width: 100%;
-  margin-top: 60px;
-  // todo 修改侧边菜单栏距离顶部的高度，设置成60px
   height: 100%;
   background-color: $menuBg;
   .scroll-wrapper {
