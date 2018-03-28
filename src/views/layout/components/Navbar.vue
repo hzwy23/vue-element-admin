@@ -2,8 +2,8 @@
   <el-menu class="navbar" mode="horizontal">
 
     <div class="main-menu">
-      <div class="main-logo">
-        <span>智干电商ERP系统</span>
+      <div class="main-logo-content">
+        <img class="main-logo" src="../../../assets/logo.png" />
       </div>
 
       <!--主菜单展示区域-->
@@ -181,19 +181,26 @@ export default {
   float: left;
   z-index: 9999;
 }
-.main-logo{
+
+.main-logo-content {
   height: 60px;
   line-height: 60px;
-  width: 240px;
   font-size: 26px;
   font-weight: 600;
   color: #FFFFFF;
   padding-left: 15px;
   float: left;
+  z-index: 999999;
+}
+
+.main-logo{
+  height: 42px;
+  line-height: 42px;
+  margin-top: 9px;
 }
 .main-menu-content {
   float: left;
-  margin-left: 60px;
+  margin-left: 30px;
   /*width: 600px;*/
 }
 .main-menu-content ul {
