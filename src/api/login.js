@@ -23,13 +23,9 @@ export function logout() {
 
 // 根据token，获取用户详细信息
 export function getUserInfo(token) {
-
-
-
   // return request({
   //   url: '/user/info',
   //   method: 'get',
-  //   params: { token }
+  //   params: { 'admin' }
   // })
 }
-

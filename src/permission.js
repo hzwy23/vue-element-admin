@@ -32,8 +32,10 @@ router.beforeEach((to, from, next) => {
             next({ ...to, replace: true }) // hack方法 确保addRoutes已完成 ,set the replace: true so the navigation will not leave a history record
           })
         }).catch(() => {
+          // TODO add by hzwy23
+          NProgress.done()
           store.dispatch('FedLogOut').then(() => {
-            Message.error('Verification failed, please login again')
+            Message.error('用户信息校验失败、请重新登陆')
             next({ path: '/login' })
           })
         })

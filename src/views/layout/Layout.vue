@@ -11,7 +11,6 @@
 
 <script>
 import { Navbar, Sidebar, AppMain, TagsView } from './components'
-// import MainMenu from './components/MainMenu'
 
 export default {
   name: 'layout',

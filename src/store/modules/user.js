@@ -51,7 +51,6 @@ const user = {
         loginByUsername(username, userInfo.password).then(response => {
           const token = response.data.data.token
           commit('SET_TOKEN', token)
-          commit('SET_ROLES', '["common"]')
           setToken(token)
           resolve()
         }).catch(error => {
