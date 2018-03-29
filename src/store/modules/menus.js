@@ -3,7 +3,23 @@ import MenusObj from '@/api/menus'
 const menus = {
   state: {
     mainMenuItems: [{ id: 'Dashbord', name: '首页' }],
-    subMenuItems: [],
+    subMenuItems: [{
+      path: '/components',
+      component: 'Layout',
+      redirect: 'noredirect',
+      name: 'component-demo',
+      meta: {
+        title: 'components',
+        icon: 'component'
+      },
+      children: [
+        { path: 'tinymce', component: "_import('components-demo/tinymce')", name: 'tinymce-demo', meta: { title: 'tinymce' }},
+        { path: 'markdown', component: "_import('components-demo/markdown')", name: 'markdown-demo', meta: { title: 'markdown' }},
+        { path: 'json-editor', component: "_import('components-demo/jsonEditor')", name: 'jsonEditor-demo', meta: { title: 'jsonEditor' }},
+        { path: 'dnd-list', component: "_import('components-demo/dndList')", name: 'dndList-demo', meta: { title: 'dndList' }},
+        { path: 'splitpane', component: "_import('components-demo/splitpane')", name: 'splitpane-demo', meta: { title: 'splitPane' }}
+      ]
+    }],
     activeMainMenuItem: 'Dashbord'
   },
   mutations: {

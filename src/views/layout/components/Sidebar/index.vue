@@ -4,7 +4,7 @@
              background-color="#f1f1f1"
              text-color="#000000"
              active-text-color="#409EFF">
-      <sidebar-item :routes="permission_routers"></sidebar-item>
+      <sidebar-item :routes="subMenuItems"></sidebar-item>
     </el-menu>
   </scroll-bar>
 </template>
@@ -18,7 +18,7 @@ export default {
   components: { SidebarItem, ScrollBar },
   computed: {
     ...mapGetters([
-      'permission_routers',
+      'subMenuItems',
       'sidebar'
     ]),
     isCollapse() {
