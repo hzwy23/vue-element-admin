@@ -19,7 +19,7 @@ export default {
     Sidebar,
     AppMain,
     TagsView,
-    // MainMenu
+    // MainMenus
   },
   computed: {
     sidebar() {

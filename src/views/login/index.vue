@@ -74,7 +74,7 @@ export default {
     return {
       loginForm: {
         username: 'admin',
-        password: 'add6f2f665bf00774adae98071ac1fc6'
+        password: 'Smartdo123'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -101,7 +101,6 @@ export default {
             this.loading = false
             this.$router.push({ path: '/' })
           }).catch(() => {
-            console.log('登陆错误')
             this.loading = false
           })
         } else {

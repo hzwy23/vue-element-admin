@@ -3,26 +3,13 @@
 
     <div class="main-menu">
       <div class="main-logo-content">
-        <img class="main-logo" src="../../../assets/logo.png" />
+        <router-link :to="'/'" ><img class="main-logo" src="../../../assets/logo.png" /></router-link>
       </div>
 
       <!--主菜单展示区域-->
       <div class="main-menu-content">
-        <!--TODO 替换成从数据库读取用户被授权的菜单信息-->
-        <ul>
-          <li>人事管理</li>
-          <li>权限管理</li>
-          <li>商品管理</li>
-          <li>供应商管理</li>
-          <li>仓库管理</li>
-          <li>财股管理</li>
-          <li>报表系统</li>
-        </ul>
+        <mainMenus/>
       </div>
-      <!--用户信息展示区域-->
-      <!--<div class="main-user-info">-->
-        <!--<navbar></navbar>-->
-      <!--</div>-->
     </div>
 
     <!--<hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>-->
@@ -73,6 +60,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import MainMenus from './MainMenus/index'
 // import Breadcrumb from '@/components/Breadcrumb'
 // import Hamburger from '@/components/Hamburger'
 import ErrorLog from '@/components/ErrorLog'
@@ -87,7 +75,8 @@ export default {
     ErrorLog,
     Screenfull,
     LangSelect,
-    ThemePicker
+    ThemePicker,
+    MainMenus
   },
   computed: {
     ...mapGetters([
@@ -208,25 +197,6 @@ export default {
   background-color: inherit;
   line-height: 59px;
   height: 59px;
-  border: none;
-}
-.main-menu-content ul {
-  border: none;
-  line-height: 59px;
-  height: 59px;
-  padding: 0px;
-  margin: 0px;
-}
-.main-menu-content li {
-  float: left;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0px 15px;
-  padding: 0px;
-  height: 58px;
-  line-height: 58px;
-  list-style: none;
   border: none;
 }
 </style>

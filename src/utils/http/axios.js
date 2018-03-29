@@ -1,14 +1,15 @@
 import axios from 'axios'
+import { getToken } from '../auth'
 
 axios.defaults.baseURL = process.env.BASE_API
-// axios.defaults.headers.common['Authorization'] = process.env.AUTH_TOKEN
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 axios.defaults.timeout = 5000
 
 // Add a request interceptor
 axios.interceptors.request.use(function(config) {
   console.log('request config: => ', config)
-
+  // 获取token信息
+  config.headers.Authorization = getToken()
   // Do something before request is sent
   return config
 }, function(error) {

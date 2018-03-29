@@ -17,7 +17,7 @@ import './errorLog'// error log
 import './permission' // permission control
 import './mock' // simulation data
 
-import '@/utils/axios'
+import '@/utils/http/axios'
 
 import * as filters from './filters' // global filters
 

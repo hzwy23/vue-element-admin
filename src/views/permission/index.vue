@@ -24,11 +24,11 @@ export default{
     ])
   },
   watch: {
-    switchRoles(val) {
-      this.$store.dispatch('ChangeRoles', val).then(() => {
-        this.$router.push({ path: '/permission/index?' + +new Date() })
-      })
-    }
+    // switchRoles(val) {
+    //   this.$store.dispatch('ChangeRoles', val).then(() => {
+    //     this.$router.push({ path: '/permission/index?' + +new Date() })
+    //   })
+    // }
   }
 }
 </script>
