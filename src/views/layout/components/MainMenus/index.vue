@@ -19,7 +19,6 @@
       methods: {
         toogleMainMenu(index, indexPath) {
           this.$store.dispatch('SetActiveMainMenuItem', index)
-          // 获取下级菜单数据
         }
       },
       created: function() {
