@@ -3,7 +3,7 @@ import axios from 'axios'
 import crypto from 'crypto-js'
 
 export function loginByUsername(username, password) {
-  let urlParams = new URLSearchParams()
+  const urlParams = new URLSearchParams()
   urlParams.append('username', username)
   urlParams.append('password', crypto.MD5(password))
 

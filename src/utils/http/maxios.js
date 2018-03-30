@@ -1,12 +1,14 @@
 import axios from 'axios'
 import { getToken } from '../auth'
 
-axios.defaults.baseURL = process.env.BASE_API
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-axios.defaults.timeout = 5000
+const maxios = axios.create({
+  baseURL: process.env.MOCK_BASE_API,
+  timeout: 5000,
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+})
 
 // Add a request interceptor
-axios.interceptors.request.use(function(config) {
+maxios.interceptors.request.use(function(config) {
   // 获取token信息
   config.headers.Authorization = getToken()
   // Do something before request is sent
@@ -18,7 +20,7 @@ axios.interceptors.request.use(function(config) {
 })
 
 // Add a response interceptor
-axios.interceptors.response.use(function(response) {
+maxios.interceptors.response.use(function(response) {
   // Do something with response data
   return response
 }, function(error) {
@@ -27,5 +29,5 @@ axios.interceptors.response.use(function(response) {
   return Promise.reject(error)
 })
 
-export default {}
+export default maxios
 
